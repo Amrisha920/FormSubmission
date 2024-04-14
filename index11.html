@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+           
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;;
+            padding: 5;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: wheat;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color:burlywood;
+            color: black;
+        }
+        .search-container {
+            float: right;
+        }
+        input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+        @media screen and (max-width: 600px) {
+            .navbar a, .search-container {
+                float: none;
+                display: block;
+                text-align: center;
+            }
+            .search-container {
+                margin-top: 10px;
+            }
+        }
+        .h{
+            background-image: url("/face.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 20px;
+            text-align: left ;
+            background-color: bisque;
+            height: 500px
+            
+
+
+        }
+        h1{
+            font-family:Arial, Helvetica, sans-serif ;
+            line-height:0cqmin;
+            padding-bottom: 10px;
+            background-color: beige;
+        }
+        #click{
+            margin-bottom: 10px;
+            background-color: burlywood;
+            padding: 3px 5px;
+            display: flex;
+            border-radius: 9px;
+            
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]
+        input[type="number"] {
+            padding: 10px ;
+            margin-bottom: 17px;
+            font-size: 17px;
+            border: none;
+            
+        }
+        #sex{
+            margin-top: 10px;
+            padding-top: 10px;
+            font-weight: bolder;
+        }
+        .Bt{
+            margin: 50px;
+           
+            
+        }
+        #pass{
+            border: none;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        #no{
+            border: none;
+            padding: 5px;
+        }
+        
+       
+        
+            
+       
+    </style>
+</head>
+<body>
+    
+    <h1>MyUniverse</h1>
+    <button id="click"    onclick="checkNewUser()">New User!</button>
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Login</a>
+        <div class="search-container">
+            <form action="/search">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="h">
+        <form onsubmit="return checkLogin()">
+            
+        <label for="Email"></label>
+        
+        
+            <label for="Name">Full Name:</label>
+            <input type="text" name="Name" id="Name">
+            <div>
+                <label for="Last Name">Last Name:</label>
+                <input type="text" name="Last Name" id="Last Name">
+
+            </div>
+            <div class="El">
+
+                <label for="Email"> Email Address:</label>
+                <input type="email" name="Email" id="Email" >
+            </div>
+            <label for="pass">Password:</label>
+            <input type="password" name="pass" id="pass" >
+
+           
+            <label for="no">Phone Number:</label>
+            <input type="number" name="no" id="no" >
+            <div>
+                <label for="sex">Sex:</label>
+                <select name="sex" id="sex">
+                    <option value="Select">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Others</option>
+                </select>
+                <br>
+                <div class="Bt">
+                    <button id="but1" type="submit">submit</button>
+                    <button id="but2" type="submit">Reset</button>
+                </div>
+               
+
+                
+
+
+           
+           
+                
+        
+    
+</form>
+<script>
+    function checkNewUser() {
+        var newUser = prompt("Are you a new user? (Yes/No)");
+
+        if (newUser && newUser.trim().toLowerCase() === "yes") {
+            alert("Welcome to MyUniverse!");
+        } else {
+            alert("Welcome back!");
+        }
+    }
+    function checkLogin() {
+        var email = document.getElementById("email").value;
+        
+        var predefinedEmail = "user@example.com";
+
+        if (email === predefinedEmail) {
+            alert("You are already a user!");
+            return false;
+        }
+        return true; 
+    }
+    
+</script>
+</body>
+</html>
